@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Show Page for <%=team.name%></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/teams">Team Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Team Attributes:</h2>
+        <ul>
+          <li>Name: <%=team.name%></li>
+        </ul>
+      </section>
+      <section>
+        <form action="/teams/<%=team._id%>?_method=DELETE" method="POST">
+          <button type='submit'>Delete </button>
+        </form>
+      </section>
+      <section>
+        <a href="/teams/<%=team._id%>/edit">Edit</a>
+      </section>
+    </main>
+  </body>
+</html>

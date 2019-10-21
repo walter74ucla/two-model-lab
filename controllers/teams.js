@@ -40,6 +40,23 @@ router.post('/', (req, res) => {
 })
 
 
+//Show route
+router.get('/:id', (req, res) => {
+
+  Team.findById(req.params.id, (err, foundTeam) => {
+      if(err){
+        res.send(err);
+      } else {
+        res.render('teams/show.ejs', {
+          team: foundTeam // foundTeam response from the db
+          // team is the variable in show.ejs
+        })
+      }
+
+  });
+
+
+})
 
 
 
