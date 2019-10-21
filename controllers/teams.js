@@ -44,8 +44,18 @@ router.get('/:id/edit', (req, res) => {
       })
     }
   })
-})
+});
 
+//Put route
+router.put('/:id', (req,res) => {
+  Team.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err,updatedTeam) => {
+    if(err){
+      res.send(err)
+    } else {
+      res.redirect('/teams')
+    }
+  })
+});
 
 //Show route
 router.get('/:id', (req, res) => {
