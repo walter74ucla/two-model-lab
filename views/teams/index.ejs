@@ -25,7 +25,13 @@
               <li>
                   <a href="/teams/<%=teams[i]._id%>"><%=teams[i].name%></a>
               </li>
+          <section>
+        <form action="/teams/<%=teams[i]._id%>?_method=DELETE" method="POST">
+          <button type='submit'>Delete </button>
+        </form>
+      </section>
           <% } %>
+          
       </ul>
     </main>
   </body>
