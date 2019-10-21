@@ -9,6 +9,19 @@ router.get('/new', (req, res) => {
 })
 
 
+router.post('/', (req, res) => {
+
+  Team.create(req.body, (err, createdTeam) => {
+    if(err){
+      res.send(err);
+    } else {
+      // console.log(createdTeam); 
+      res.redirect('/teams')
+    }
+
+  })
+
+})
 
 
 
