@@ -1,0 +1,23 @@
+{
+  "name": "two-model-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walter74ucla/two-model-lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walter74ucla/two-model-lab/issues"
+  },
+  "homepage": "https://github.com/walter74ucla/two-model-lab#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}
