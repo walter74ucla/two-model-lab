@@ -17,7 +17,22 @@ router.get('/', (req, res) => {
 });
 
 
+//New route
+router.get('/new', (req, res) => {
+  res.render('players/new.ejs');
+});
 
+//Post route
+router.post('/', (req, res) => {
+  Player.create(req.body, (err, createdPlayer) => {
+    if(err){
+      res.send(err);
+    } else {
+      // console.log(createdPlayer); 
+      res.redirect('/players')
+    }
+  })
+});
 
 
 
