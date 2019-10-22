@@ -16,6 +16,9 @@ app.get('/',(req, res) => {
   res.render('index.ejs')
 });
 
+const playersController = require('./controllers/players.js');
+app.use('/players', playersController);
+
 
 const teamsController = require('./controllers/teams.js');
 app.use('/teams', teamsController);
