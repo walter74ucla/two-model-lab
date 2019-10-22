@@ -59,7 +59,16 @@ router.get('/:id', (req, res) => {
 
 
 
-
+//Delete route
+router.delete('/:id', (req, res) => {
+  Player.findByIdAndRemove(req.params.id, (err, response) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.redirect('/players')// if successful go back to the index
+    }
+  });
+});
 
 
 
