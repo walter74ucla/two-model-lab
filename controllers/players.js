@@ -50,6 +50,29 @@ router.get('/:id', (req, res) => {
 });
 
 
+//Edit route
+router.get('/:id/edit', (req, res) => {
+  Player.findById(req.params.id, (err, foundPlayer) => {
+    if(err){
+      res.send(err);
+    } else {
+      res.render('players/edit.ejs', {
+        player: foundPlayer // foundPlayer is the response from the db
+      })
+    }
+  })
+});
+
+//Put route
+router.put('/:id', (req,res) => {
+  Player.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err,updatedPlayer) => {
+    if(err){
+      res.send(err)
+    } else {
+      res.redirect('/players')
+    }
+  })
+});
 
 
 
