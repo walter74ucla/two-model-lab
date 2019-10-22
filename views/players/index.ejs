@@ -23,7 +23,7 @@
       <ul>
           <% for(let i = 0; i < players.length; i++){ %>
               <li>
-                  <a href="/teams/<%=players[i]._id%>"><%=players[i].name%></a>
+                  <a href="/players/<%=players[i]._id%>"><%=players[i].name%></a>
               </li>
           <section>
         <form action="/players/<%=players[i]._id%>?_method=DELETE" method="POST">

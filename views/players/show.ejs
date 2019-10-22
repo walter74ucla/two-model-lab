@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>Show Page for <%=player.name%></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/players">Player Index</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h2>Player Attributes:</h2>
+        <ul>
+          <li>Name: <%=player.name%></li>
+        </ul>
+      </section>
+      <section>
+        <form action="/players/<%=player._id%>?_method=DELETE" method="POST">
+          <button type='submit'>Delete </button>
+        </form>
+      </section>
+      <section>
+        <a href="/players/<%=player._id%>/edit">Edit</a>
+      </section>
+    </main>
+  </body>
+</html>

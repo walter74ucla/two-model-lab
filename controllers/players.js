@@ -35,7 +35,19 @@ router.post('/', (req, res) => {
 });
 
 
-
+//Show route
+router.get('/:id', (req, res) => {
+  Player.findById(req.params.id, (err, foundPlayer) => {
+      if(err){
+        res.send(err);
+      } else {
+        res.render('players/show.ejs', {
+          player: foundPlayer // foundPlayer response from the db
+          // player is the variable in show.ejs
+        });
+      }
+  });
+});
 
 
 
